@@ -1,185 +1,756 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="2.5.0" client="site" method="upgrade">
-    <name>NTeam</name>
-    <author>Nitish Gundherva</author>
-    <version>1.0.0</version>
+    	<name>NTeam</name>
+    	<author>Nitish Gundherva</author>
+    	<version>1.0.5</version>
 	<creationDate>July 2013</creationDate>
-    <description>A module to display the team members.</description>
+    	<description>A module to display the team members.</description>
 	<copyright>This module is released under the GNU/GPL License</copyright>
 	<license>GNU/GPL http://www.gnu.org/copyleft/gpl.html</license>
-	<authorEmail>ekanshpreet@gmail.com</authorEmail>
+	<authorEmail>nitish.gundherva@nsitonline.in</authorEmail>
 	<authorUrl>www.nsitonline.in</authorUrl>
-    <files>
-        <filename>mod_nteam.xml</filename>
-        <filename module="mod_nteam">mod_nteam.php</filename>
-        <filename>index.html</filename>
-        <filename>helper.php</filename>
-        <filename>tmpl/default.php</filename>
-        <filename>tmpl/resize-class.php</filename>
-        <filename>tmpl/index.html</filename>
-        <filename>css/mod_nteam.php</filename>
-        <filename>css/index.html</filename>
-        <filename>LICENSE.txt</filename>
+	<updateservers>
+        	<server type="extension" name="NTeam" priority="1">http://nitish.nsitonline.in/nteam/mod_nteam_update.xml</server>
+	</updateservers>
+    	<files>
+	        <filename>mod_nteam.xml</filename>
+	        <filename module="mod_nteam">mod_nteam.php</filename>
+	        <filename>index.html</filename>
+	        <filename>helper.php</filename>
+	        <filename>tmpl/default.php</filename>
+	        <filename>tmpl/resize-class.php</filename>
+	        <filename>tmpl/index.html</filename>
+	        <filename>css/mod_nteam.php</filename>
+	        <filename>css/index.html</filename>
+	        <filename>LICENSE.txt</filename>
 	</files>
 	<media folder="media" destination="mod_nteam">
                 <filename>index.html</filename>
-    </media>
-    <config>
-			<fields name="params">
-				<fieldset name="settings" label="Module Settings">
-					<field name="imageno" type="text" label="No of images in a row" description="" size="50" default="5"/>
-					<field name="image-width" type="text" label="Image Width (px)" description="" size="50" default="200" />
-					<field name="image-height" type="text" label="Image Height (px)" description="" size="50" default="200" />
-					<field name="image-method" type="list" default="crop" label="Resize Method" description="">
-					  <option value="crop">Crop</option>
-					  <option value="exact">Exact</option>
-					  <option value="auto">Auto</option>
-					  <option value="landscape">Landscape</option>
-					  <option value="portrait">Portrait</option>
-					</field>
-					<field name="border-width" type="text" label="Border Width (px)" description="" size="50" default="5" />
-					<field name="border-color" type="color" label="Border Color" description="" size="50" default="#ABABAB" />
-				</fieldset>
-				<fieldset name="Team" label="Team Member Details">
-					<field name="name_1" type="text" label="Name" description="" size="50" />
-					<field name="field1_1" type="text" label="Field 1" description="" size="50" />
-					<field name="field2_1" type="text" label="Field 2" description="" size="50" />
-					<field name="image_1" type="media" label="Image" directory="team" />
-					<field name="link_1" type="text" label="Social Profile Link" description="" size="50" />
-					<field type="spacer" name="myspacer1" hr="true"/>
-					
-					<field name="name_2" type="text" label="Name" description="" size="50" />
-					<field name="field1_2" type="text" label="Field 1" description="" size="50" />
-					<field name="field2_2" type="text" label="Field 2" description="" size="50" />
-					<field name="image_2" type="media" label="Image" directory="team" />
-					<field name="link_2" type="text" label="Social Profile Link" description="" size="50" />
-					<field type="spacer" name="myspacer2" hr="true"/>
-					
-					<field name="name_3" type="text" label="Name" description="" size="50" />
-					<field name="field1_3" type="text" label="Field 1" description="" size="50" />
-					<field name="field2_3" type="text" label="Field 2" description="" size="50" />
-					<field name="image_3" type="media" label="Image" directory="team" />
-					<field name="link_3" type="text" label="Social Profile Link" description="" size="50" />
-					<field type="spacer" name="myspacer3" hr="true"/>
-					
-					<field name="name_4" type="text" label="Name" description="" size="50" />
-					<field name="field1_4" type="text" label="Field 1" description="" size="50" />
-					<field name="field2_4" type="text" label="Field 2" description="" size="50" />
-					<field name="image_4" type="media" label="Image" directory="team" />
-					<field name="link_4" type="text" label="Social Profile Link" description="" size="50" />
-					<field type="spacer" name="myspacer4" hr="true"/>
-					
-					<field name="name_5" type="text" label="Name" description="" size="50" />
-					<field name="field1_5" type="text" label="Field 1" description="" size="50" />
-					<field name="field2_5" type="text" label="Field 2" description="" size="50" />
-					<field name="image_5" type="media" label="Image" directory="team" />
-					<field name="link_5" type="text" label="Social Profile Link" description="" size="50" />
-					<field type="spacer" name="myspacer5" hr="true"/>
-					
-					<field name="name_6" type="text" label="Name" description="" size="50" />
-					<field name="field1_6" type="text" label="Field 1" description="" size="50" />
-					<field name="field2_6" type="text" label="Field 2" description="" size="50" />
-					<field name="image_6" type="media" label="Image" directory="team" />
-					<field name="link_6" type="text" label="Social Profile Link" description="" size="50" />
-					<field type="spacer" name="myspacer6" hr="true"/>
-					
-					<field name="name_7" type="text" label="Name" description="" size="50" />
-					<field name="field1_7" type="text" label="Field 1" description="" size="50" />
-					<field name="field2_7" type="text" label="Field 2" description="" size="50" />
-					<field name="image_7" type="media" label="Image" directory="team" />
-					<field name="link_7" type="text" label="Social Profile Link" description="" size="50" />
-					<field type="spacer" name="myspacer7" hr="true"/>
-					
-					<field name="name_8" type="text" label="Name" description="" size="50" />
-					<field name="field1_8" type="text" label="Field 1" description="" size="50" />
-					<field name="field2_8" type="text" label="Field 2" description="" size="50" />
-					<field name="image_8" type="media" label="Image" directory="team" />
-					<field name="link_8" type="text" label="Social Profile Link" description="" size="50" />
-					<field type="spacer" name="myspacer8" hr="true"/>
-					
-					<field name="name_9" type="text" label="Name" description="" size="50" />
-					<field name="field1_9" type="text" label="Field 1" description="" size="50" />
-					<field name="field2_9" type="text" label="Field 2" description="" size="50" />
-					<field name="image_9" type="media" label="Image" directory="team" />
-					<field name="link_9" type="text" label="Social Profile Link" description="" size="50" />
-					<field type="spacer" name="myspacer9" hr="true"/>
-					
-					<field name="name_10" type="text" label="Name" description="" size="50" />
-					<field name="field1_10" type="text" label="Field 1" description="" size="50" />
-					<field name="field2_10" type="text" label="Field 2" description="" size="50" />
-					<field name="image_10" type="media" label="Image" directory="team" />
-					<field name="link_10" type="text" label="Social Profile Link" description="" size="50" />
-					<field type="spacer" name="myspacer10" hr="true"/>
-					
-					<field name="name_11" type="text" label="Name" description="" size="50" />
-					<field name="field1_11" type="text" label="Field 1" description="" size="50" />
-					<field name="field2_11" type="text" label="Field 2" description="" size="50" />
-					<field name="image_11" type="media" label="Image" directory="team" />
-					<field name="link_11" type="text" label="Social Profile Link" description="" size="50" />
-					<field type="spacer" name="myspacer11" hr="true"/>
-					
-					<field name="name_12" type="text" label="Name" description="" size="50" />
-					<field name="field1_12" type="text" label="Field 1" description="" size="50" />
-					<field name="field2_12" type="text" label="Field 2" description="" size="50" />
-					<field name="image_12" type="media" label="Image" directory="team" />
-					<field name="link_12" type="text" label="Social Profile Link" description="" size="50" />
-					<field type="spacer" name="myspacer12" hr="true"/>
-					
-					<field name="name_13" type="text" label="Name" description="" size="50" />
-					<field name="field1_13" type="text" label="Field 1" description="" size="50" />
-					<field name="field2_13" type="text" label="Field 2" description="" size="50" />
-					<field name="image_13" type="media" label="Image" directory="team" />
-					<field name="link_13" type="text" label="Social Profile Link" description="" size="50" />
-					<field type="spacer" name="myspacer13" hr="true"/>
-					
-					<field name="name_14" type="text" label="Name" description="" size="50" />
-					<field name="field1_14" type="text" label="Field 1" description="" size="50" />
-					<field name="field2_14" type="text" label="Field 2" description="" size="50" />
-					<field name="image_14" type="media" label="Image" directory="team" />
-					<field name="link_14" type="text" label="Social Profile Link" description="" size="50" />
-					<field type="spacer" name="myspacer14" hr="true"/>
-					
-					<field name="name_15" type="text" label="Name" description="" size="50" />
-					<field name="field1_15" type="text" label="Field 1" description="" size="50" />
-					<field name="field2_15" type="text" label="Field 2" description="" size="50" />
-					<field name="image_15" type="media" label="Image" directory="team" />
-					<field name="link_15" type="text" label="Social Profile Link" description="" size="50" />
-					<field type="spacer" name="myspacer15" hr="true"/>
-					
-					<field name="name_16" type="text" label="Name" description="" size="50" />
-					<field name="field1_16" type="text" label="Field 1" description="" size="50" />
-					<field name="field2_16" type="text" label="Field 2" description="" size="50" />
-					<field name="image_16" type="media" label="Image" directory="team" />
-					<field name="link_16" type="text" label="Social Profile Link" description="" size="50" />
-					<field type="spacer" name="myspacer16" hr="true"/>
-					
-					<field name="name_17" type="text" label="Name" description="" size="50" />
-					<field name="field1_17" type="text" label="Field 1" description="" size="50" />
-					<field name="field2_17" type="text" label="Field 2" description="" size="50" />
-					<field name="image_17" type="media" label="Image" directory="team" />
-					<field name="link_17" type="text" label="Social Profile Link" description="" size="50" />
-					<field type="spacer" name="myspacer17" hr="true"/>
-					
-					<field name="name_18" type="text" label="Name" description="" size="50" />
-					<field name="field1_18" type="text" label="Field 1" description="" size="50" />
-					<field name="field2_18" type="text" label="Field 2" description="" size="50" />
-					<field name="image_18" type="media" label="Image" directory="team" />
-					<field name="link_18" type="text" label="Social Profile Link" description="" size="50" />
-					<field type="spacer" name="myspacer18" hr="true"/>
-					
-					<field name="name_19" type="text" label="Name" description="" size="50" />
-					<field name="field1_19" type="text" label="Field 1" description="" size="50" />
-					<field name="field2_19" type="text" label="Field 2" description="" size="50" />
-					<field name="image_19" type="media" label="Image" directory="team" />
-					<field name="link_19" type="text" label="Social Profile Link" description="" size="50" />
-					<field type="spacer" name="myspacer19" hr="true"/>
-					
-					<field name="name_20" type="text" label="Name" description="" size="50" />
-					<field name="field1_20" type="text" label="Field 1" description="" size="50" />
-					<field name="field2_20" type="text" label="Field 2" description="" size="50" />
-					<field name="image_20" type="media" label="Image" directory="team" />
-					<field name="link_20" type="text" label="Social Profile Link" description="" size="50" />
+		<filename>img/no-image.jpg</filename>
+    	</media>
+    	<config>
+		<fields name="params">
+			<fieldset name="settings" label="Module Settings">
+				<field name="imageno" type="text" label="No of images in a row" description="Fill 0 for max. no of images per row" size="50" default="5"/>
+				<field name="image-width" type="text" label="Image Width (px)" description="Width of the images" size="50" default="200" />
+				<field name="image-height" type="text" label="Image Height (px)" description="Height of the images" size="50" default="200" />
+				<field name="image-method" type="list" default="crop" label="Resize Method" description="Choose the method using which images will be resized">
+					<option value="crop">Crop</option>
+					<option value="exact">Exact</option>
+					<option value="auto">Auto</option>
+					<option value="landscape">Landscape</option>
+					<option value="portrait">Portrait</option>
+				</field>
+				<field name="border-width" type="text" label="Border Width (px)" description="Width of the border" size="50" default="5" />
+				<field name="border-color" type="color" label="Border Color" description="Color of the border" size="50" default="#ABABAB" />
+				<field name="title-size" type="text" label="Title Font Size (px)" description="Font size of the title" size="50" default="24" />
+				<field name="field1-size" type="text" label="Field 1 Font Size (px)" description="Font size of the field 1" size="50" default="18" />
+				<field name="field2-size" type="text" label="Field 2 Font Size (px))" description="Font size of the field 2" size="50" default="18" />
+				<field name="link-tab" type="list" default="new" label="Open links in" description="Choose whether the links should open in new tab or same window">
+					<option value="new">New Tab</option>
+					<option value="same">Same Window</option>
+				</field>
+			</fieldset>
+			<fieldset name="Team" label="Team Member Details">
+				<field name="name_1" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_1" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_1" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_1" type="media" label="Image" directory="team" />
+				<field name="link_1" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer1" hr="true"/>
+
+				<field name="name_2" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_2" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_2" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_2" type="media" label="Image" directory="team" />
+				<field name="link_2" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer2" hr="true"/>
+
+				<field name="name_3" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_3" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_3" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_3" type="media" label="Image" directory="team" />
+				<field name="link_3" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer3" hr="true"/>
+
+				<field name="name_4" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_4" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_4" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_4" type="media" label="Image" directory="team" />
+				<field name="link_4" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer4" hr="true"/>
+
+				<field name="name_5" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_5" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_5" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_5" type="media" label="Image" directory="team" />
+				<field name="link_5" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer5" hr="true"/>
+
+				<field name="name_6" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_6" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_6" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_6" type="media" label="Image" directory="team" />
+				<field name="link_6" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer6" hr="true"/>
+
+				<field name="name_7" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_7" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_7" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_7" type="media" label="Image" directory="team" />
+				<field name="link_7" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer7" hr="true"/>
+
+				<field name="name_8" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_8" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_8" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_8" type="media" label="Image" directory="team" />
+				<field name="link_8" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer8" hr="true"/>
+
+				<field name="name_9" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_9" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_9" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_9" type="media" label="Image" directory="team" />
+				<field name="link_9" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer9" hr="true"/>
+
+				<field name="name_10" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_10" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_10" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_10" type="media" label="Image" directory="team" />
+				<field name="link_10" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer10" hr="true"/>
+
+				<field name="name_11" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_11" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_11" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_11" type="media" label="Image" directory="team" />
+				<field name="link_11" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer11" hr="true"/>
+
+				<field name="name_12" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_12" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_12" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_12" type="media" label="Image" directory="team" />
+				<field name="link_12" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer12" hr="true"/>
+
+				<field name="name_13" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_13" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_13" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_13" type="media" label="Image" directory="team" />
+				<field name="link_13" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer13" hr="true"/>
+
+				<field name="name_14" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_14" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_14" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_14" type="media" label="Image" directory="team" />
+				<field name="link_14" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer14" hr="true"/>
+
+				<field name="name_15" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_15" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_15" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_15" type="media" label="Image" directory="team" />
+				<field name="link_15" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer15" hr="true"/>
+
+				<field name="name_16" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_16" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_16" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_16" type="media" label="Image" directory="team" />
+				<field name="link_16" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer16" hr="true"/>
+
+				<field name="name_17" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_17" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_17" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_17" type="media" label="Image" directory="team" />
+				<field name="link_17" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer17" hr="true"/>
+
+				<field name="name_18" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_18" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_18" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_18" type="media" label="Image" directory="team" />
+				<field name="link_18" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer18" hr="true"/>
+
+				<field name="name_19" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_19" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_19" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_19" type="media" label="Image" directory="team" />
+				<field name="link_19" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer19" hr="true"/>
+
+				<field name="name_20" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_20" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_20" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_20" type="media" label="Image" directory="team" />
+				<field name="link_20" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer20" hr="true"/>
+
+				<field name="name_21" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_21" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_21" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_21" type="media" label="Image" directory="team" />
+				<field name="link_21" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer21" hr="true"/>
+
+				<field name="name_22" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_22" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_22" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_22" type="media" label="Image" directory="team" />
+				<field name="link_22" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer22" hr="true"/>
+
+				<field name="name_23" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_23" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_23" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_23" type="media" label="Image" directory="team" />
+				<field name="link_23" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer23" hr="true"/>
+
+				<field name="name_24" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_24" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_24" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_24" type="media" label="Image" directory="team" />
+				<field name="link_24" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer24" hr="true"/>
+
+				<field name="name_25" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_25" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_25" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_25" type="media" label="Image" directory="team" />
+				<field name="link_25" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer25" hr="true"/>
+
+				<field name="name_26" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_26" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_26" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_26" type="media" label="Image" directory="team" />
+				<field name="link_26" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer26" hr="true"/>
+
+				<field name="name_27" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_27" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_27" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_27" type="media" label="Image" directory="team" />
+				<field name="link_27" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer27" hr="true"/>
+
+				<field name="name_28" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_28" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_28" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_28" type="media" label="Image" directory="team" />
+				<field name="link_28" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer28" hr="true"/>
+
+				<field name="name_29" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_29" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_29" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_29" type="media" label="Image" directory="team" />
+				<field name="link_29" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer29" hr="true"/>
+
+				<field name="name_30" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_30" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_30" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_30" type="media" label="Image" directory="team" />
+				<field name="link_30" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer30" hr="true"/>
+
+				<field name="name_31" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_31" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_31" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_31" type="media" label="Image" directory="team" />
+				<field name="link_31" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer31" hr="true"/>
+
+				<field name="name_32" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_32" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_32" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_32" type="media" label="Image" directory="team" />
+				<field name="link_32" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer32" hr="true"/>
+
+				<field name="name_33" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_33" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_33" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_33" type="media" label="Image" directory="team" />
+				<field name="link_33" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer33" hr="true"/>
+
+				<field name="name_34" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_34" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_34" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_34" type="media" label="Image" directory="team" />
+				<field name="link_34" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer34" hr="true"/>
+
+				<field name="name_35" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_35" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_35" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_35" type="media" label="Image" directory="team" />
+				<field name="link_35" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer35" hr="true"/>
+
+				<field name="name_36" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_36" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_36" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_36" type="media" label="Image" directory="team" />
+				<field name="link_36" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer36" hr="true"/>
+
+				<field name="name_37" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_37" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_37" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_37" type="media" label="Image" directory="team" />
+				<field name="link_37" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer37" hr="true"/>
+
+				<field name="name_38" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_38" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_38" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_38" type="media" label="Image" directory="team" />
+				<field name="link_38" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer38" hr="true"/>
+
+				<field name="name_39" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_39" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_39" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_39" type="media" label="Image" directory="team" />
+				<field name="link_39" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer39" hr="true"/>
+
+				<field name="name_40" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_40" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_40" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_40" type="media" label="Image" directory="team" />
+				<field name="link_40" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer40" hr="true"/>
+
+				<field name="name_41" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_41" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_41" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_41" type="media" label="Image" directory="team" />
+				<field name="link_41" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer41" hr="true"/>
+
+				<field name="name_42" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_42" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_42" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_42" type="media" label="Image" directory="team" />
+				<field name="link_42" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer42" hr="true"/>
+
+				<field name="name_43" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_43" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_43" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_43" type="media" label="Image" directory="team" />
+				<field name="link_43" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer43" hr="true"/>
+
+				<field name="name_44" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_44" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_44" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_44" type="media" label="Image" directory="team" />
+				<field name="link_44" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer44" hr="true"/>
+
+				<field name="name_45" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_45" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_45" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_45" type="media" label="Image" directory="team" />
+				<field name="link_45" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer45" hr="true"/>
+
+				<field name="name_46" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_46" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_46" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_46" type="media" label="Image" directory="team" />
+				<field name="link_46" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer46" hr="true"/>
+
+				<field name="name_47" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_47" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_47" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_47" type="media" label="Image" directory="team" />
+				<field name="link_47" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer47" hr="true"/>
+
+				<field name="name_48" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_48" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_48" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_48" type="media" label="Image" directory="team" />
+				<field name="link_48" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer48" hr="true"/>
+
+				<field name="name_49" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_49" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_49" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_49" type="media" label="Image" directory="team" />
+				<field name="link_49" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer49" hr="true"/>
+
+				<field name="name_50" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_50" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_50" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_50" type="media" label="Image" directory="team" />
+				<field name="link_50" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer50" hr="true"/>
+
+				<field name="name_51" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_51" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_51" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_51" type="media" label="Image" directory="team" />
+				<field name="link_51" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer51" hr="true"/>
+
+				<field name="name_52" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_52" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_52" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_52" type="media" label="Image" directory="team" />
+				<field name="link_52" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer52" hr="true"/>
+
+				<field name="name_53" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_53" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_53" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_53" type="media" label="Image" directory="team" />
+				<field name="link_53" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer53" hr="true"/>
+
+				<field name="name_54" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_54" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_54" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_54" type="media" label="Image" directory="team" />
+				<field name="link_54" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer54" hr="true"/>
+
+				<field name="name_55" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_55" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_55" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_55" type="media" label="Image" directory="team" />
+				<field name="link_55" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer55" hr="true"/>
+
+				<field name="name_56" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_56" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_56" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_56" type="media" label="Image" directory="team" />
+				<field name="link_56" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer56" hr="true"/>
+
+				<field name="name_57" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_57" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_57" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_57" type="media" label="Image" directory="team" />
+				<field name="link_57" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer57" hr="true"/>
+
+				<field name="name_58" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_58" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_58" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_58" type="media" label="Image" directory="team" />
+				<field name="link_58" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer58" hr="true"/>
+
+				<field name="name_59" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_59" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_59" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_59" type="media" label="Image" directory="team" />
+				<field name="link_59" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer59" hr="true"/>
+
+				<field name="name_60" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_60" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_60" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_60" type="media" label="Image" directory="team" />
+				<field name="link_60" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer60" hr="true"/>
+
+				<field name="name_61" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_61" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_61" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_61" type="media" label="Image" directory="team" />
+				<field name="link_61" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer61" hr="true"/>
+
+				<field name="name_62" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_62" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_62" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_62" type="media" label="Image" directory="team" />
+				<field name="link_62" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer62" hr="true"/>
+
+				<field name="name_63" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_63" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_63" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_63" type="media" label="Image" directory="team" />
+				<field name="link_63" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer63" hr="true"/>
+
+				<field name="name_64" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_64" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_64" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_64" type="media" label="Image" directory="team" />
+				<field name="link_64" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer64" hr="true"/>
+
+				<field name="name_65" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_65" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_65" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_65" type="media" label="Image" directory="team" />
+				<field name="link_65" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer65" hr="true"/>
+
+				<field name="name_66" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_66" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_66" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_66" type="media" label="Image" directory="team" />
+				<field name="link_66" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer66" hr="true"/>
+
+				<field name="name_67" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_67" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_67" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_67" type="media" label="Image" directory="team" />
+				<field name="link_67" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer67" hr="true"/>
+
+				<field name="name_68" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_68" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_68" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_68" type="media" label="Image" directory="team" />
+				<field name="link_68" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer68" hr="true"/>
+
+				<field name="name_69" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_69" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_69" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_69" type="media" label="Image" directory="team" />
+				<field name="link_69" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer69" hr="true"/>
+
+				<field name="name_70" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_70" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_70" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_70" type="media" label="Image" directory="team" />
+				<field name="link_70" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer70" hr="true"/>
+
+				<field name="name_71" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_71" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_71" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_71" type="media" label="Image" directory="team" />
+				<field name="link_71" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer71" hr="true"/>
+
+				<field name="name_72" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_72" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_72" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_72" type="media" label="Image" directory="team" />
+				<field name="link_72" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer72" hr="true"/>
+
+				<field name="name_73" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_73" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_73" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_73" type="media" label="Image" directory="team" />
+				<field name="link_73" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer73" hr="true"/>
+
+				<field name="name_74" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_74" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_74" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_74" type="media" label="Image" directory="team" />
+				<field name="link_74" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer74" hr="true"/>
+
+				<field name="name_75" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_75" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_75" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_75" type="media" label="Image" directory="team" />
+				<field name="link_75" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer75" hr="true"/>
+
+				<field name="name_76" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_76" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_76" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_76" type="media" label="Image" directory="team" />
+				<field name="link_76" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer76" hr="true"/>
+
+				<field name="name_77" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_77" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_77" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_77" type="media" label="Image" directory="team" />
+				<field name="link_77" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer77" hr="true"/>
+
+				<field name="name_78" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_78" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_78" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_78" type="media" label="Image" directory="team" />
+				<field name="link_78" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer78" hr="true"/>
+
+				<field name="name_79" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_79" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_79" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_79" type="media" label="Image" directory="team" />
+				<field name="link_79" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer79" hr="true"/>
+
+				<field name="name_80" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_80" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_80" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_80" type="media" label="Image" directory="team" />
+				<field name="link_80" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer80" hr="true"/>
+
+				<field name="name_81" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_81" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_81" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_81" type="media" label="Image" directory="team" />
+				<field name="link_81" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer81" hr="true"/>
+
+				<field name="name_82" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_82" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_82" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_82" type="media" label="Image" directory="team" />
+				<field name="link_82" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer82" hr="true"/>
+
+				<field name="name_83" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_83" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_83" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_83" type="media" label="Image" directory="team" />
+				<field name="link_83" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer83" hr="true"/>
+
+				<field name="name_84" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_84" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_84" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_84" type="media" label="Image" directory="team" />
+				<field name="link_84" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer84" hr="true"/>
+
+				<field name="name_85" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_85" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_85" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_85" type="media" label="Image" directory="team" />
+				<field name="link_85" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer85" hr="true"/>
+
+				<field name="name_86" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_86" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_86" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_86" type="media" label="Image" directory="team" />
+				<field name="link_86" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer86" hr="true"/>
+
+				<field name="name_87" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_87" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_87" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_87" type="media" label="Image" directory="team" />
+				<field name="link_87" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer87" hr="true"/>
+
+				<field name="name_88" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_88" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_88" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_88" type="media" label="Image" directory="team" />
+				<field name="link_88" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer88" hr="true"/>
+
+				<field name="name_89" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_89" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_89" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_89" type="media" label="Image" directory="team" />
+				<field name="link_89" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer89" hr="true"/>
+
+				<field name="name_90" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_90" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_90" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_90" type="media" label="Image" directory="team" />
+				<field name="link_90" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer90" hr="true"/>
+
+				<field name="name_91" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_91" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_91" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_91" type="media" label="Image" directory="team" />
+				<field name="link_91" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer91" hr="true"/>
+
+				<field name="name_92" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_92" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_92" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_92" type="media" label="Image" directory="team" />
+				<field name="link_92" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer92" hr="true"/>
+
+				<field name="name_93" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_93" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_93" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_93" type="media" label="Image" directory="team" />
+				<field name="link_93" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer93" hr="true"/>
+
+				<field name="name_94" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_94" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_94" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_94" type="media" label="Image" directory="team" />
+				<field name="link_94" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer94" hr="true"/>
+
+				<field name="name_95" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_95" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_95" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_95" type="media" label="Image" directory="team" />
+				<field name="link_95" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer95" hr="true"/>
+
+				<field name="name_96" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_96" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_96" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_96" type="media" label="Image" directory="team" />
+				<field name="link_96" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer96" hr="true"/>
+
+				<field name="name_97" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_97" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_97" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_97" type="media" label="Image" directory="team" />
+				<field name="link_97" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer97" hr="true"/>
+
+				<field name="name_98" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_98" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_98" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_98" type="media" label="Image" directory="team" />
+				<field name="link_98" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer98" hr="true"/>
+
+				<field name="name_99" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_99" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_99" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_99" type="media" label="Image" directory="team" />
+				<field name="link_99" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
+				<field type="spacer" name="myspacer99" hr="true"/>
+
+				<field name="name_100" type="text" label="Name" description="Team member's name" size="50" />
+				<field name="field1_100" type="text" label="Field 1" description="Any information can be filled here" size="50" />
+				<field name="field2_100" type="text" label="Field 2" description="Any information can be filled here" size="50" />
+				<field name="image_100" type="media" label="Image" directory="team" />
+				<field name="link_100" type="text" label="Social Profile Link" description="Social profile link of the team member" size="50" />
 			</fieldset>
 		</fields>
-    </config>
+    	</config>
 </extension>
