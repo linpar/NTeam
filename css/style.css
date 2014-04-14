@@ -1,0 +1,179 @@
+@import url('http://fonts.googleapis.com/css?family=Titillium+Web:600');
+@import url(http://fonts.googleapis.com/css?family=Fredoka+One);
+@import url(http://fonts.googleapis.com/css?family=Averia+Sans+Libre:700);
+
+html, body { margin: 0; font-family: 'Titillium Web';}
+body {
+	padding-top: 70px;
+	background-image: url(bg.png) !important; /*#E05151;*/
+	background: #252525;
+	color: #FFFFFF;
+}
+a { 
+	color: #f05458; 
+	-webkit-transition: all 0.6s ease;
+	-moz-transition: all 0.6s ease;
+	-ms-transition: all 0.6s ease;
+	-o-transition: all 0.6s ease;
+	transition: all 0.6s ease;
+}
+a:hover
+{ 
+	color: #f2262b;
+}
+.clear { clear: both; }
+h3 {
+	font-family: 'Fredoka One', cursive;
+	color: #FFF;
+	font-size: 30px;
+	font-weight: bold;
+}
+h1 {
+	font-family: 'Averia Sans Libre', cursive;
+	font-size: 70px;
+}
+.page-header {
+	border-bottom: 4px dashed #202020;
+}
+.navbar-nav>li {
+	text-transform: uppercase;
+}
+.main-container {
+	min-height: 500px;
+}
+#footer {
+	position: relative;
+	margin-top: 10px;
+	line-height: 40px;
+	height: 50px;
+	background: transparent;
+}
+.navbar-inverse .navbar-brand {
+	color: #E2E2E2;
+	font-size: 22px;
+}
+.navbar-custom {
+	width: 100%;
+	background: transparent;
+	color: #FFF;
+	border: 0;
+	position: absolute;
+	top: 0;
+	height: 70px;
+	font-size: 20px;
+	padding: 10px;
+}
+.navbar-inverse .navbar-nav>li>a {
+	color: #DBDBDB;
+}
+.margin-top-40 {
+	margin-top: 40px;
+}
+.btn-custom {
+	padding: 20px;
+	font-size: 18px;
+    white-space: normal;
+	border-radius: 0px;
+	width: 150px;
+	margin-top: 10px;
+	color: #FAFAFA;
+	margin-left: 15px;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	border: 0;
+}
+.btn-download {
+	padding: 20px;
+	font-size: 28px;
+    	white-space: normal;
+	border-radius: 0px;
+	width: auto;
+	margin-top: 10px;
+	color: #FAFAFA;
+	margin-left: 15px;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	border: 0;
+}
+.btn-contact{
+	padding: 10px;
+	font-size: 20px;
+    	white-space: normal;
+	width: auto;
+	margin-top: 10px;
+	color: #FFF;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	border: 0;
+}
+.box {
+	height: 120px;
+	padding: 15px;
+	width: 90%;
+	margin-top: 10px;
+	background-color: #ABABAB;
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-ms-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+
+.box-text {
+	font-size: 22px;
+	color: #FFF;
+	text-align: center;
+	-moz-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	position: relative;
+	top: 50%;
+}
+
+.box.light-blue {
+	background: #00ADEE;
+}
+.box.dark-blue {
+	background: #69C;
+}
+.box.yellow {
+	background: #E9AF00;
+}
+.box.dark-orange {
+	background: #D8401E;
+}
+.box.light-orange {
+	background: #F9745F;
+}
+.box.dark-red {
+	background: #900;
+}
+.box.light-red {
+	background: #E05151;
+}
+.box.green {
+	background: #1ABC9C;
+}
+.box.pink {
+	background: #D35977;
+}
+
+.box.download {
+	height: 320px;
+	background: #ABABAB;
+}
+.error {
+	background: rgba(197, 67, 50, 0.34);
+	color: #FFF;
+}
