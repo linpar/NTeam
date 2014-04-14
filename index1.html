@@ -90,13 +90,9 @@
 			$('a[rel*=menu]').on("click", function() {
 				var filename = $(this).attr('href');
 				$("#main_content").hide().html('<img style="position: absolute; left:48%; top: 48%;" src="images/ajax_load.gif" />').fadeIn(0);
-				$.ajax({
-					type: "POST",
-					url: "pages/"+filename+".html",  
-					success: function(result){
-						$("#main_content").hide().html(result).fadeIn(1000);
-					}
-				});
+				$.get('pages/'+filename+'.html', function(data) {
+					$("#main_content").hide().html(result).fadeIn(1000);
+			   });
 				return false;
 			});
 		})
