@@ -40,8 +40,8 @@ include_once("resize-class.php");
 				$image = 'media/mod_nteam/img/no-image.jpg';
 			}
 			$resizeObj = new resize($image);
-			$resizeObj->resizeImage( $width, $height, $method);
-			$resizeObj->saveImage('media/mod_nteam/'.basename($image), 100);
+			$resizeObj -> resizeImage( $width, $height, $method);
+			$resizeObj -> saveImage('media/mod_nteam/'.basename($image), 100);
 			$image = 'media/mod_nteam/'.basename($image);
 			$imageno = $params->get('imageno');
 

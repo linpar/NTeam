@@ -10,7 +10,7 @@
 	<authorEmail>nitish.gundherva@nsitonline.in</authorEmail>
 	<authorUrl>www.nsitonline.in</authorUrl>
 	<updateservers>
-        	<server type="extension" name="NTeam" priority="1">http://nteam.nitishgundherva.me/mod_nteam_update.xml</server>
+        	<server type="extension" name="NTeam" priority="1">http://nitish.nsitonline.in/nteam/mod_nteam_update.xml</server>
 	</updateservers>
     	<files>
 	        <filename>mod_nteam.xml</filename>
