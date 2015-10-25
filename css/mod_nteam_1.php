@@ -5,6 +5,7 @@
  * @license GNU/GPL, see LICENSE.txt
  * Author: Nitish Gundherva
  */
+
 defined( '_JEXEC' ) or die( 'Restricted access' );  
 $color = $_SESSION['color'];
 $width = $_SESSION['width'];
@@ -74,8 +75,8 @@ $field2FontSize= $_SESSION['field2FontSize'];
 	box-shadow: 0px 0px 20px #ABABAB; /*CSS3 shadow: 30px blurred shadow all around image*/
 	-webkit-box-shadow: 0px 0px 20px #ABABAB; /*Safari shadow version*/
 	-moz-box-shadow: 0px 0px 20px #ABABAB; /*Mozilla shadow version*/
-	-o-box-shadow: 0px 0px 20px #ABABAB; /*Mozilla shadow version*
-	-ms-box-shadow: 0px 0px 20px #ABABAB; /*Mozilla shadow version*
+	-o-box-shadow: 0px 0px 20px #ABABAB; /*Mozilla shadow version*/
+	-ms-box-shadow: 0px 0px 20px #ABABAB; /*Mozilla shadow version*/
 	opacity: 1;
 }
 #nteam img
