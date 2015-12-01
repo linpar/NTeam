@@ -13,5 +13,6 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 require_once( dirname(__FILE__).'/helper.php' );
  
 $nteam = modTeamHelper::getTeam( $params );
-require( JModuleHelper::getLayoutPath( 'mod_nteam' ) );
+$layout = $params->get('layout', 'default');
+require( JModuleHelper::getLayoutPath( 'mod_nteam', $layout ) );
 ?>
