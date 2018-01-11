@@ -16,7 +16,6 @@ require_once( dirname(__FILE__).'/imageresize.php' );
 ModNTeamHelper::$imageResizeHelper = new ModNTeamImageResizeHelper();
 
 $teamMembers = ModNTeamHelper::getMembers($params);
-print_r($teamMembers);
 $imageWidth = $params->get('image-width');
 $imageHeight = $params->get('image-height');
 $borderColor = $params->get('border-color');
